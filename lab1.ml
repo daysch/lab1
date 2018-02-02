@@ -323,7 +323,7 @@ Exercise 12: Reimplement prods using map.
 ......................................................................*)
 
 let prods_ho (lst : (int * int) list) : int list =
-  failwith "prods_ho not implemented" ;;
+  map ( fun (x, y) -> x*y) lst ;;
 
 (*......................................................................
 Exercise 13: The OCaml List module provides, in addition to the map,
@@ -335,7 +335,7 @@ two lists to form the result list. Use map2 to reimplement zip.
 ......................................................................*)
 
 let zip_ho (x : int list) (y : int list) : (int * int) list =
-  failwith "sum_ho not implemented" ;;
+    map2 (fun  y -> (x,y)) x y ;;
 
 (*......................................................................
 Exercise 14: Define a function evens, using these higher-order
