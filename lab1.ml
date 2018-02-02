@@ -335,7 +335,7 @@ two lists to form the result list. Use map2 to reimplement zip.
 ......................................................................*)
 
 let zip_ho (x : int list) (y : int list) : (int * int) list =
-    map2 (fun  y -> (x,y)) x y ;;
+    map2 (fun x y -> (x,y)) x y ;;
 
 (*......................................................................
 Exercise 14: Define a function evens, using these higher-order
