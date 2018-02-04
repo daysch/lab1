@@ -323,7 +323,7 @@ Exercise 12: Reimplement prods using map.
 ......................................................................*)
 
 let prods_ho (lst : (int * int) list) : int list =
-  map ( fun (x, y) -> x*y) lst ;;
+  map (fun (x, y) -> x*y) lst ;;
 
 (*......................................................................
 Exercise 13: The OCaml List module provides, in addition to the map,
@@ -344,4 +344,16 @@ even numbers in its argument list.
 ......................................................................*)
 
 let evens : int list -> int list =
-  fun _ -> failwith "evens not implemented" ;;
+  fold_left (fun lst x -> if x mod 2 = 0 then lst @ [x] else lst) [];;
+
+
+(*
+Insert element:
+let rec insert lst elmnt i =
+  match lst with
+  | [] -> if i = 0 then [elmnt] else raise (Invalid_argument "list")
+  | h::t -> if i = 0 then
+                    elmnt :: h :: t else h :: (insert t elmnt (i - 1)) ;;
+
+
+*)
